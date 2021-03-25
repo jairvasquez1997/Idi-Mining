@@ -1,0 +1,63 @@
+[26-Nov-2018 12:59:43 America/New_York] PHP Notice:  Undefined index: precio in /home/pyrus/public_html/Culqi/proceso.php on line 15
+[26-Nov-2018 12:59:43 America/New_York] PHP Notice:  Undefined index: producto in /home/pyrus/public_html/Culqi/proceso.php on line 17
+[26-Nov-2018 12:59:43 America/New_York] PHP Notice:  Undefined index: email in /home/pyrus/public_html/Culqi/proceso.php on line 18
+[26-Nov-2018 12:59:43 America/New_York] PHP Notice:  Undefined index: token in /home/pyrus/public_html/Culqi/proceso.php on line 19
+[26-Nov-2018 12:59:52 America/New_York] PHP Fatal error:  Uncaught Culqi\Error\UnhandledError: {"object":"error","type":"parameter_error","merchant_message":"El campo 'source_id' es inválido o está vacío.","param":"source_id"} in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php:35
+Stack trace:
+#0 /home/pyrus/public_html/Culqi/lib/Culqi/Charges.php(29): Culqi\Client->request('POST', '/charges/', 'sk_test_W0JjhQr...', Array)
+#1 /home/pyrus/public_html/Culqi/proceso.php(19): Culqi\Charges->create(Array)
+#2 {main}
+  thrown in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php on line 35
+[26-Nov-2018 13:02:21 America/New_York] PHP Fatal error:  Uncaught Culqi\Error\UnhandledError: {"object":"error","type":"parameter_error","merchant_message":"El campo 'amount' es inválido.  El valor de 'amount' debe ser de no más de 9999900 (S/ 99,999.00).","user_message":"Hubo algunos problemas al intentar validar tu compra. Contáctanos para ayudarte.","param":"amount"} in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php:35
+Stack trace:
+#0 /home/pyrus/public_html/Culqi/lib/Culqi/Charges.php(29): Culqi\Client->request('POST', '/charges/', 'sk_test_W0JjhQr...', Array)
+#1 /home/pyrus/public_html/Culqi/proceso.php(19): Culqi\Charges->create(Array)
+#2 {main}
+  thrown in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php on line 35
+[28-Nov-2018 12:47:09 America/New_York] PHP Notice:  Undefined index: precio in /home/pyrus/public_html/Culqi/proceso.php on line 15
+[28-Nov-2018 12:47:11 America/New_York] PHP Fatal error:  Uncaught Culqi\Error\UnhandledError: {"object":"error","type":"parameter_error","merchant_message":"El campo 'amount' es inválido o está vacío.  El valor debe ser entero y sin punto decimal. Ejemplo: 19900 (199.00 soles)","user_message":"Hubo algunos problemas al intentar validar tu compra. Contáctanos para ayudarte.","param":"amount"} in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php:35
+Stack trace:
+#0 /home/pyrus/public_html/Culqi/lib/Culqi/Charges.php(29): Culqi\Client->request('POST', '/charges/', 'sk_test_W0JjhQr...', Array)
+#1 /home/pyrus/public_html/Culqi/proceso.php(21): Culqi\Charges->create(Array)
+#2 {main}
+  thrown in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php on line 35
+[29-Nov-2018 11:15:32 America/New_York] PHP Fatal error:  Uncaught Culqi\Error\UnhandledError: {"object":"error","type":"parameter_error","merchant_message":"El campo 'amount' es inválido.  El valor de 'amount' debe ser de no más de 9999900 (S/ 99,999.00).","user_message":"Hubo algunos problemas al intentar validar tu compra. Contáctanos para ayudarte.","param":"amount"} in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php:35
+Stack trace:
+#0 /home/pyrus/public_html/Culqi/lib/Culqi/Charges.php(29): Culqi\Client->request('POST', '/charges/', 'sk_test_W0JjhQr...', Array)
+#1 /home/pyrus/public_html/Culqi/proceso.php(21): Culqi\Charges->create(Array)
+#2 {main}
+  thrown in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php on line 35
+[29-Nov-2018 12:26:59 America/New_York] PHP Fatal error:  Uncaught Culqi\Error\UnhandledError: {"object":"error","type":"expiracion_invalida","charge_id":"chr_test_Wi9KF01kma1g5gVW","code":"DNGA0054","merchant_message":"Fecha de Expiracion Invalida.","user_message":"La fecha de expiración de su tarjeta es inválida. Intente nuevamente o utilice otra tarjeta."} in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php:49
+Stack trace:
+#0 /home/pyrus/public_html/Culqi/lib/Culqi/Charges.php(29): Culqi\Client->request('POST', '/charges/', 'sk_test_W0JjhQr...', Array)
+#1 /home/pyrus/public_html/Culqi/proceso.php(21): Culqi\Charges->create(Array)
+#2 {main}
+  thrown in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php on line 49
+[04-Dec-2018 13:09:52 America/New_York] PHP Notice:  Undefined index: monto in /home/pyrus/public_html/Culqi/proceso.php on line 15
+[04-Dec-2018 13:09:52 America/New_York] PHP Notice:  Undefined index: producto in /home/pyrus/public_html/Culqi/proceso.php on line 18
+[04-Dec-2018 13:09:52 America/New_York] PHP Notice:  Undefined index: email in /home/pyrus/public_html/Culqi/proceso.php on line 19
+[04-Dec-2018 13:09:52 America/New_York] PHP Notice:  Undefined index: token in /home/pyrus/public_html/Culqi/proceso.php on line 21
+[04-Dec-2018 13:09:53 America/New_York] PHP Fatal error:  Uncaught Culqi\Error\UnhandledError: {"object":"error","type":"parameter_error","merchant_message":"El campo 'source_id' es inválido o está vacío.","param":"source_id"} in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php:35
+Stack trace:
+#0 /home/pyrus/public_html/Culqi/lib/Culqi/Charges.php(29): Culqi\Client->request('POST', '/charges/', 'sk_test_W0JjhQr...', Array)
+#1 /home/pyrus/public_html/Culqi/proceso.php(21): Culqi\Charges->create(Array)
+#2 {main}
+  thrown in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php on line 35
+[04-Dec-2018 13:09:54 America/New_York] PHP Notice:  Undefined index: monto in /home/pyrus/public_html/Culqi/proceso.php on line 15
+[04-Dec-2018 13:09:54 America/New_York] PHP Notice:  Undefined index: producto in /home/pyrus/public_html/Culqi/proceso.php on line 18
+[04-Dec-2018 13:09:54 America/New_York] PHP Notice:  Undefined index: email in /home/pyrus/public_html/Culqi/proceso.php on line 19
+[04-Dec-2018 13:09:54 America/New_York] PHP Notice:  Undefined index: token in /home/pyrus/public_html/Culqi/proceso.php on line 21
+[04-Dec-2018 13:09:54 America/New_York] PHP Fatal error:  Uncaught Culqi\Error\UnhandledError: {"object":"error","type":"parameter_error","merchant_message":"El campo 'source_id' es inválido o está vacío.","param":"source_id"} in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php:35
+Stack trace:
+#0 /home/pyrus/public_html/Culqi/lib/Culqi/Charges.php(29): Culqi\Client->request('POST', '/charges/', 'sk_test_W0JjhQr...', Array)
+#1 /home/pyrus/public_html/Culqi/proceso.php(21): Culqi\Charges->create(Array)
+#2 {main}
+  thrown in /home/pyrus/public_html/Culqi/lib/Culqi/Client.php on line 35
+[25-May-2020 22:40:35 UTC] PHP Notice:  Trying to get property 'monto' of non-object in /home/pyruserp/public_html/APP/estancia/Culqi/proceso.php on line 18
+[25-May-2020 22:40:35 UTC] PHP Notice:  Trying to get property 'producto' of non-object in /home/pyruserp/public_html/APP/estancia/Culqi/proceso.php on line 21
+[25-May-2020 22:40:35 UTC] PHP Notice:  Trying to get property 'email' of non-object in /home/pyruserp/public_html/APP/estancia/Culqi/proceso.php on line 22
+[25-May-2020 22:40:35 UTC] PHP Notice:  Trying to get property 'token' of non-object in /home/pyruserp/public_html/APP/estancia/Culqi/proceso.php on line 24
+[25-May-2020 23:54:33 UTC] PHP Notice:  Trying to get property 'monto' of non-object in /home/pyruserp/public_html/APP/estancia/Culqi/proceso.php on line 18
+[25-May-2020 23:54:33 UTC] PHP Notice:  Trying to get property 'producto' of non-object in /home/pyruserp/public_html/APP/estancia/Culqi/proceso.php on line 21
+[25-May-2020 23:54:33 UTC] PHP Notice:  Trying to get property 'email' of non-object in /home/pyruserp/public_html/APP/estancia/Culqi/proceso.php on line 22
+[25-May-2020 23:54:33 UTC] PHP Notice:  Trying to get property 'token' of non-object in /home/pyruserp/public_html/APP/estancia/Culqi/proceso.php on line 24

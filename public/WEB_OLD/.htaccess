@@ -1,0 +1,12 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_REFERER} !^http://idi-mining.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://idi-mining.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.idi-mining.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.idi-mining.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://idi-mining.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://idi-mining.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.idi-mining.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.idi-mining.com$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+
