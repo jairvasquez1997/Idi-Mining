@@ -103,8 +103,8 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
-            <span class="section-suptitle text-center">Idi-mining</span>
-            <h2 class="section-title sep-type-2 text-center">Mis Pedidos</h2>
+            <span class="section-title text-center" style="font: oblique bold 230% cursive;">IDI-MINING</span>
+            <h2 class="section-suptitle sep-type-2 text-center" style="font: oblique bold 200% cursive;"><b>Mis pedidos</b></h2>
           </div><!-- /.col-lg-12 -->
           <pedidos-cliente></pedidos-cliente>
         </div><!-- /.row -->

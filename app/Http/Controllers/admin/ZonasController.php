@@ -20,7 +20,18 @@ class ZonasController extends Controller
 
     public function index()
     {
-        
+        $zona = DB::table('zonas')->orderBy('id', 'DESC')->get();
+        return response()->json($zona);
+    }
+
+    public function searchZona($id)
+    {
+        $zona = DB::table('zonas')->orderBy('id', 'DESC')->where('id', $id)->first();
+        return response()->json($zona);
+    }
+
+    public function getData()
+    {
         $zona = DB::table('zonas')->orderBy('id', 'DESC')->get();
         return response()->json($zona);
     }

@@ -9,7 +9,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 window.Bus = new Vue();
-import VueApexCharts from 'vue-apexcharts'
+import VueApexCharts from 'vue-apexcharts';
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
+
+Vue.component("v-select", vSelect);
 
 
 

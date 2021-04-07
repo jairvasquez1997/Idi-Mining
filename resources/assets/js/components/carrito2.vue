@@ -25,10 +25,8 @@
                     @input="changeZona"
                     placeholder="Seleccione la Zona" 
                     style="font-size: 12px;"
-                     />
+                     /><br>
                 </div>
-                
-                
 
                 <div v-if="usuario.cliente!=null" class="row" style="padding-right: 15px; padding-left: 15px;">
                     <div class="col-md-12">
@@ -136,7 +134,7 @@
                     </div>
                 <div class="col-md-12" id="ntar" style="display: none;">
                     <span id="spanDireccion" v-if="errors.numero_tarjeta" class="error alert errores" role="alert">{{ errors.numero_tarjeta[0] }}</span>
-                  <input type="text" class="form-control" :name="'numero_tarjeta'" data-culqi="card[number]" id="card[number]" placeholder="N° Tarjeta"><br>
+                  <input type="text" class="form-control" v-model="numero_tarjeta" data-culqi="card[number]" id="card[number]" placeholder="N° Tarjeta"><br>
                 </div>
                 <div class="row" style="padding-right: 15px; padding-left: 15px;">
                     <div class="col-md-4" id="divmes" style="display: none;">
@@ -159,9 +157,9 @@
               <h6 style="padding: 15px;" class="title">Totales del Carrito: </h6>
               <ul class="list-unstyled mb-0" style="padding-left: 20px;">
                 <li><span>Subtotal: </span><span>S/ {{ total }}</span></li>
-                <!--<li><span>Costo de Envio :</span><span>S/ <input style="border: 0; width: 27px; font-size: 14px; color:#9b9b9b; padding: 0px; text-align: right;" type="text" id="envio" v-model="precio"></span></li>-->
-                <li><span>IGV: </span><span>S/ 0.00</span></li>
-                <li> <span style=" color: black; font-size: 22px;"><b>Total: </b></span><span style="color: #CF9B67; font-size: 22px;"><b>S/ <input style="border: 0; width: 140px; color: #CF9B67; text-align: right;" type="text" v-model="total"></b></span></li>
+                <li><span>Costo de Envío: </span><span>S/ <input style="border: 0; width: 100px; font-size: 14px; background-color: #fff; color:#9b9b9b; text-align: left;" type="text" id="envio" v-model="precio"></span></li>
+                <li><span>IGV: </span><span>S/ {{ igv }}</span></li>
+                <li> <span style=" color: black; font-size: 22px;"><b>Total: </b></span><span style="color: #CF9B67; font-size: 22px;"><b>S/ <input style="border: 0; width: 140px; color: #CF9B67; text-align: left;" type="text" v-model="total_final"></b></span></li>
               </ul>
                 <!--<div style="float: right;">-->
                     <br>
@@ -184,16 +182,18 @@
                 errors:[],
                 carts: [],
                 zonas: [],
-                total: '',
+                total: '0.00',
                 image_src: '/web/assets/img/pagoseguro.jpg',
                 selected:'',
                 razon_social:'',
                 mes:'',
                 anuo:'',
                 cvv:'',
+                numero_tarjeta:'',
 
                 precio:'0.00',
                 total_final:'0.00',
+                igv:'0.00',
             }
 
         },
@@ -272,14 +272,16 @@
                if(value){
                     axios.get(route('zona.list.envio', value)).then(({data}) => {
                         this.precio = data.precio;
-                        let precio_con = parseFloat(parseFloat(this.precio).toFixed(2));
-                        let total_con = parseFloat(parseFloat(this.total).toFixed(2));
-                        let total_f = total_con + precio_con
-                        this.total_final = parseFloat(total_f).toFixed(2);
+                        //let precio_con = parseFloat(parseFloat(this.precio).toFixed(2));
+                        //let total_con = parseFloat(parseFloat(this.total).toFixed(2));
+                        //let total_f = this.total + precio
+                        this.total_final = this.total + this.precio
+                        this.igv = (this.total * 18) / 100;
                     });
                 }
                 else{
                     this.precio = 0.00;
+                    this.igv = 0.00;
                     this.total_final = 0.00;
                 }
             },
@@ -309,7 +311,7 @@
                 let tipo_pago = $('input[name=tipoPago]:checked', '#myForm').val();
                 let tipo_comprobante = $('input[name=tipoComprobante]:checked', '#myFormulario').val();
                 let cliente_id=this.usuario.cliente.id;
-                let numero_tarjeta = $('#numero_tarjeta').val();
+                let numero_tarjeta = this.numero_tarjeta;
                 let mes = this.mes;
                 let anuo = this.anuo;
                 let cvv = this.cvv;
@@ -339,8 +341,9 @@
                     dni:dni,
                 }
 
-                this.carritoGlobal = params;
-                this.tuFuncion();
+                //this.carritoGlobal = params;
+                //this.tuFuncion();
+                console.log(params);
                 
             /*
                 axios.post(route('cliente.pedidos.store'),params)
